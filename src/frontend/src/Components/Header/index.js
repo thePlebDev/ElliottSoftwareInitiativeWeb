@@ -27,6 +27,9 @@ const Title = styled.div`
     color:#00a862;
     font-weight:700;
     letter-spacing:1.5px;
+    @media only screen and (max-width: 700px) {
+        display:none;
+    }
 
 
 `
