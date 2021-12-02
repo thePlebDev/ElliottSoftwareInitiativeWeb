@@ -8,7 +8,6 @@ import Form from '../Form'
 import useForm from '../../Hooks/useForms';
 import validateLogin from '../../Util/validateLogin';
 
-
 const Title = styled.div`
 margin-bottom:20px;
 font-weight: 700;
@@ -47,26 +46,26 @@ background: #00a862;
 
 const SignupText = styled.div`
     width:85%;
-    margin: 10px auto;
+    margin: 10px auto; 
 `
 
 
-const Login = ()=>{
-    
-const {state,handleChange,handleSubmit,errors} = useForm(validateLogin)
+
+
+const Signup =()=>{
+    const {state,handleChange,handleSubmit,errors} = useForm(validateLogin)
 
     return(
         <Form handleSubmit={(e)=>handleSubmit(e)}>
-            <Title>Login in to your account</Title>
+            <Title>Create a account</Title>
             <TextInput handleChange={handleChange} errors={errors.Username} name={"Username"} value={state.Username} type={"text"}/>
             <TextInput handleChange={handleChange} errors={errors.Password} name={"Password"} value={state.Password} type={"password"}/>
-           <Link to="/Signup">
-                <SignupText>Create Account</SignupText>
+           <Link to="/">
+                <SignupText>Already have a acount?</SignupText>
            </Link>
-            <Button type="submit" value="Login">Login</Button>
+            <Button type="submit" value="Signup">Signup</Button>
         </Form>
     )
 }
 
-
-export default Login
+export default Signup
